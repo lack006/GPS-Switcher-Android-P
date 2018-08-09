@@ -45,9 +45,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if(b){
+                if (b) {
                     mUninstallTextView.setVisibility(View.VISIBLE);
-                }else {
+                } else {
                     mUninstallTextView.setVisibility(View.INVISIBLE);
                 }
             }

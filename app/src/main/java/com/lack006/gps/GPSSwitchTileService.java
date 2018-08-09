@@ -4,7 +4,6 @@ import android.annotation.TargetApi;
 import android.os.Build;
 import android.service.quicksettings.Tile;
 import android.service.quicksettings.TileService;
-import android.util.Log;
 import android.widget.Toast;
 
 public class GPSSwitchTileService extends TileService {
@@ -14,7 +13,7 @@ public class GPSSwitchTileService extends TileService {
     @Override
     public void onTileAdded() {
         Tile tile = getQsTile();
-        if (GPSUtil.getGPSStatus()) {
+        if (GPSUtil.getGPSStatus(this)) {
             tile.setLabel(getString(R.string.gps_on));
             tile.setState(Tile.STATE_ACTIVE);
         } else {
@@ -29,7 +28,7 @@ public class GPSSwitchTileService extends TileService {
     @Override
     public void onStartListening() {
         Tile tile = getQsTile();
-        if (GPSUtil.getGPSStatus()) {
+        if (GPSUtil.getGPSStatus(this)) {
             tile.setLabel(getString(R.string.gps_on));
             tile.setState(Tile.STATE_ACTIVE);
         } else {
