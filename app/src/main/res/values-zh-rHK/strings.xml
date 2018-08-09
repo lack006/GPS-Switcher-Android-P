@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">GPS 開關</string>
+    <string name="introduction">在 Android P 中，手機系統移除了“定位”中“模式”的“高精確度”、“節約耗電量”以及“僅限裝置”选项，以至於在 Android P 中無法通過設置關閉 GPS 。本軟體可以提供一个快捷設置圖塊監測並開關 GPS 。</string>
+    <string name="need_root">本軟體需要 ROOT 權限實現以上功能</string>
+    <string name="hide_icon">在啟動器中隱藏圖示</string>
+    <string name="gps_on">GPS 開啟</string>
+    <string name="gps_off">GPS 關閉</string>
+    <string name="exit">了解，退出</string>
+    <string name="uninstall">若想要解除安裝，請長按快捷設置圖塊進行解除安裝操作。</string>
+    <string name="error">發生錯誤</string>
+</resources>

@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">GPS Switcher</string>
+    <string name="introduction">In Android Oreo (and many versions before it), the location settings screen had a Mode option on top, which unveiled three options: High accuracy (GPS + WiFi + Bluetooth + mobile networks), Battery saving (WiFi + Bluetooth + mobile networks, but no battery-sucking GPS), and Device only (GPS).But in Android P the Mode option is gone. There\'s no equivalent to Battery saving, so you can\'t turn off the GPS and rely on quasi-accurate location without sucking down your battery.
+    \nThis software will add a tile at Quick Setting to switch the GPS ON/OFF.</string>
+    <string name="need_root">Need root permission</string>
+    <string name="hide_icon">Hide icon from Launcher</string>
+    <string name="gps_on">GPS ON</string>
+    <string name="gps_off">GPS OFF</string>
+    <string name="exit">Got it and Exit</string>
+    <string name="uninstall">If you want to Uninstall.Please Press the Quick Settings Tile and click Uninstall.</string>
+    <string name="error">Something Wrong!</string>
+</resources>
