@@ -8,11 +8,10 @@ import java.util.List;
 import eu.chainfire.libsuperuser.Shell;
 
 public class GPSUtil {
-//    private static final String GPS = "gps";
+
 
     public static boolean getGPSStatus(Context context) {
-//        List<String> list = Shell.SU.run(Commands.GET_GPS_STATUS_CMD);
-//        return !list.isEmpty() && list.get(0).contains(GPS);
+
         LocationManager lm = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
         return lm != null && lm.isProviderEnabled(LocationManager.GPS_PROVIDER);
 
