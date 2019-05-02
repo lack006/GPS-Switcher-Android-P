@@ -2,15 +2,14 @@ package com.lack006.gps;
 
 import android.content.Context;
 import android.location.LocationManager;
-
+import com.topjohnwu.superuser.Shell;
 import java.util.List;
 
-import eu.chainfire.libsuperuser.Shell;
 
 public class GPSUtil {
 
 
-    public static boolean getGPSStatus(Context context) {
+    static boolean getGPSStatus(Context context) {
 
         LocationManager lm = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
         return lm != null && lm.isProviderEnabled(LocationManager.GPS_PROVIDER);
@@ -18,13 +17,13 @@ public class GPSUtil {
 
     }
 
-    public static boolean GPSOn() {
-        List<String> list = Shell.SU.run(Commands.GPS_ON_CMD);
-        return list.isEmpty();
+    static List GPSOn() {
+
+        return Shell.su(Commands.GPS_ON_CMD).exec().getOut();
     }
 
-    public static boolean GPSOff() {
-        List<String> list = Shell.SU.run(Commands.GPS_OFF_CMD);
-        return list.isEmpty();
+    static List GPSOff() {
+
+        return Shell.su(Commands.GPS_OFF_CMD).exec().getOut();
     }
 }

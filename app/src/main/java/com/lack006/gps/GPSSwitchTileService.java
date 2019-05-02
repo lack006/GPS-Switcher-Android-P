@@ -6,6 +6,8 @@ import android.service.quicksettings.Tile;
 import android.service.quicksettings.TileService;
 import android.widget.Toast;
 
+import java.util.List;
+
 public class GPSSwitchTileService extends TileService {
     public GPSSwitchTileService() {
     }
@@ -42,26 +44,26 @@ public class GPSSwitchTileService extends TileService {
 
     @Override
     public void onClick() {
-        boolean isSucceed;
+        List list;
 
         Tile tile = getQsTile();
         if (tile.getState() == Tile.STATE_ACTIVE) {
-            isSucceed = GPSUtil.GPSOff();
-            if (isSucceed) {
+            list = GPSUtil.GPSOff();
+            if (list.isEmpty()) {
                 tile.setState(Tile.STATE_INACTIVE);
                 tile.setLabel(getString(R.string.gps_off));
             } else {
-                Toast.makeText(this, R.string.error, Toast.LENGTH_LONG).show();
+                Toast.makeText(this, getResources().getString(R.string.error) + "\n" + list.get(0), Toast.LENGTH_LONG).show();
             }
 
         } else {
 
-            isSucceed = GPSUtil.GPSOn();
-            if (isSucceed) {
+            list = GPSUtil.GPSOn();
+            if (list.isEmpty()) {
                 tile.setState(Tile.STATE_ACTIVE);
                 tile.setLabel(getString(R.string.gps_on));
             } else {
-                Toast.makeText(this, R.string.error, Toast.LENGTH_LONG).show();
+                Toast.makeText(this, getResources().getString(R.string.error) + "\n" + list.get(0), Toast.LENGTH_LONG).show();
             }
 
         }

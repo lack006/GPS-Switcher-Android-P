@@ -1,17 +1,16 @@
 package com.lack006.gps;
 
 import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.TextView;
 
-import eu.chainfire.libsuperuser.Shell;
+import com.topjohnwu.superuser.Shell;
+
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -27,29 +26,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mUninstallTextView = findViewById(R.id.uninstall_txv);
         mButton = findViewById(R.id.button);
         mButton.setOnClickListener(this);
-        if (!Shell.SU.available()) {
+        if (!Shell.rootAccess()) {
             final AlertDialog.Builder alertDialog = new AlertDialog.Builder(MainActivity.this);
             alertDialog.setTitle(R.string.app_name);
             alertDialog.setMessage(R.string.need_root);
             alertDialog.setPositiveButton(R.string.exit,
-                    new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-
-                            finish();
-                        }
-                    });
+                    (dialog, which) -> finish());
 
             alertDialog.show();
         }
-        mCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (b) {
-                    mUninstallTextView.setVisibility(View.VISIBLE);
-                } else {
-                    mUninstallTextView.setVisibility(View.INVISIBLE);
-                }
+        mCheckBox.setOnCheckedChangeListener((compoundButton, b) -> {
+            if (b) {
+                mUninstallTextView.setVisibility(View.VISIBLE);
+            } else {
+                mUninstallTextView.setVisibility(View.INVISIBLE);
             }
         });
 

@@ -1,8 +1,6 @@
 *.iml
-.idea
 .gradle
 /local.properties
-.idea/assetWizardSettings.xml
 /.idea/libraries
 /.idea/modules.xml
 /.idea/workspace.xml
