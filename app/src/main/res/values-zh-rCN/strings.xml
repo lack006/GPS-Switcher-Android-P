@@ -9,4 +9,5 @@
     <string name="exit">明白了，退出</string>
     <string name="uninstall">如果需要卸载本软件，请长按快捷设置图块进行卸载。</string>
     <string name="error">发生错误</string>
+    <string name="need_auto_switch_off">开机后自动关闭 GPS</string>
 </resources>

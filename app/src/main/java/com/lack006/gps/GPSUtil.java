@@ -6,7 +6,7 @@ import com.topjohnwu.superuser.Shell;
 import java.util.List;
 
 
-public class GPSUtil {
+class GPSUtil {
 
 
     static boolean getGPSStatus(Context context) {

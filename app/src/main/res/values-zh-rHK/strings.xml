@@ -9,4 +9,5 @@
     <string name="exit">了解，退出</string>
     <string name="uninstall">若想要解除安裝，請長按快捷設置圖塊進行解除安裝操作。</string>
     <string name="error">發生錯誤</string>
+    <string name="need_auto_switch_off">設備啓動後自動關閉 GPS</string>
 </resources>

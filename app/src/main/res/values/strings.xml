@@ -9,4 +9,5 @@
     <string name="exit">Got it and Exit</string>
     <string name="uninstall">If you want to Uninstall.Please Press the Quick Settings Tile and click Uninstall.</string>
     <string name="error">Something Wrong!</string>
+    <string name="need_auto_switch_off">Auto switch off GPS after system boot</string>
 </resources>
